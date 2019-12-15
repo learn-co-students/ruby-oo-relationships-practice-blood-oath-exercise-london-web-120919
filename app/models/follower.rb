@@ -26,4 +26,19 @@ class Follower
         @@all.select {|follower| follower.age == this_age}
     end
 
+    def my_cults #I created this method for myself, it returnts all the cults i'm in.
+        Bloodoath.all.select{|cults|cults.follower == self}
+    end
+
+    def my_cults_slogan
+        my_cults.map{|my_oaths| my_oaths.cult.slogan}
+    end
+
+    def self.most_active
+        @@all.max_by{|follower| follower.my_cults.length}
+    end
+
+    def self.top_ten
+        #I have no idea, please send help
+    end
 end

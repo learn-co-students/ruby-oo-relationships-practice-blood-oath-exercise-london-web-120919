@@ -15,9 +15,10 @@ newCult = Cult.new("newer","London",2019,"meh")
 
 # newOath = Bloodoath.new(likeWhat,sara,"2019-12-13")
 
-likeWhat.recruit_follower(sara,"2019-12-13")
+# likeWhat.recruit_follower(sara,"2019-12-13")
 likeWhat.recruit_follower(renata,"2019-12-12")
- newPact = Bloodoath.new(likeWhat,sara,"8877")
+newPact = Bloodoath.new(likeWhat,sara,"8877")
+newPact = Bloodoath.new(newCult,sara,"8877")
 
 
 binding.pry

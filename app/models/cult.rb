@@ -48,7 +48,14 @@ class Cult
     end
 
     def self.least_popular
-        followers_array = []
-        followers_array << Bloodoath.all.map {|oaths| oaths.follower}.length
+        @@all.min_by{|oaths| oaths.myOaths.count}
+    end
+
+    def self.most_popular
+        @@all.max_by{|oaths| oaths.myOaths.count}
+    end
+
+    def self.most_common_location
+        @@all.find{|cults| cults ==  self.most_popular}.location
     end
 end

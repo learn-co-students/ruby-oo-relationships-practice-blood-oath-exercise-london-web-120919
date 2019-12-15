@@ -13,5 +13,9 @@ class Bloodoath
     def self.all
         @@all
     end
+    def self.first_oath
+        @@all.first #I know they want by date, but I don't know how to do it
+
+    end
 
 end
