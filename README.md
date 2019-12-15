@@ -15,7 +15,7 @@ Before you begin, first run the following command in your terminal to install th
 
 ```sh
 bundle install
-```
+``` 
 
 You can now add all of your Ruby files for your models in the `app/models` folder. You **do not** need to require them. They will be automagically require for you so long as you use the `tools/console.rb` file to run your code.
 
