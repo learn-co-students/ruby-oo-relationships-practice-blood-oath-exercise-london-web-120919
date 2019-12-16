@@ -31,18 +31,26 @@ class Cult
     end 
 
     def cult_population #returns the number of followers in this cult
-    follower_count.count 
+    follower_count.length  
     end 
 
-    def self.find_by_name(name)#takes argument of name & returns a Cult with that name
-        all.select {|cult| cult.name == name}
+    def self.find_by_name(name_cult)#takes argument of name & returns a Cult with that name
+        self.all.find {|cult| cult.name == name_cult}
     end 
 
     def self.find_by_location(location) #argument = location and returns an Array of cults that are in that location
-        all.select {|cult| cult.location == location}
+        self.all.map {|cult| cult.location == location}
     end 
 
     def self.find_by_founding_year(year) # argument = year and returns all of the cults founded in that year
-        all.select {|cult| cult.founding_year == year}
+        self.all.map {|cult| cult.founding_year == year}
+    end 
+
+    def self.least_popular
+        self.all.min_by {|cult| cult.cult_population}
+    end 
+
+    def self.most_common_location
+        self.all.max_by {|cult| self.all.count(cult.location)}
     end 
 end 
