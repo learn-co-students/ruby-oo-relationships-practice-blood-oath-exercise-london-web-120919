@@ -6,7 +6,7 @@ class Cult
     def initialize(name,location,founding_year, slogan)
         @name = name
         @location = location 
-        @founding_year = founding_year
+        @founding_year = founding_year 
         @slogan = slogan
 
         @@all << self
@@ -16,6 +16,9 @@ class Cult
     end
     def myOaths #show me all the oaths to my cult
         Bloodoath.all.select {|oath| oath.cult == self}
+    end
+    def followers 
+        myOaths.map {|followers| followers.follower}
     end
 
     def cult_population 
@@ -39,7 +42,8 @@ class Cult
     end
 
     def average_age
-        all_the_age = myOaths.map {|follower_list| follower_list.follower.age}.reduce(:+).to_f / cult_population
+        all_the_age = myOaths.map {|follower_list| follower_list.follower.age}.reduce(:+).to_f 
+        all_the_age / cult_population
     end
 
     def my_followers_mottos
@@ -56,6 +60,8 @@ class Cult
     end
 
     def self.most_common_location
-        @@all.find{|cults| cults ==  self.most_popular}.location
+        @@all.find{|cults| cults ==  self.most_popular}.location 
+        # self.all.max_by {|cult| self.all.count(cult.location)}.location #(cult.location) it's going to count stuff that has the atribute inside ()
+       
     end
 end

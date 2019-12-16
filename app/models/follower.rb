@@ -22,23 +22,31 @@ class Follower
         @@all
     end
 
-    def self.of_a_certain_age(this_age)
-        @@all.select {|follower| follower.age == this_age}
+    def self.follower_ages
+        @@all.map {|follower| follower.age}
     end
 
-    def my_cults #I created this method for myself, it returnts all the cults i'm in.
-        Bloodoath.all.select{|cults|cults.follower == self}
+    def self.of_a_certain_age(this_age)
+        # @@all.select {|follower| follower.age == this_age}
+        self.follower_ages.select {|follower_age| follower_age == this_age}
     end
+
+    # def my_cults #I created this method for myself, it returnts all the cults i'm in.
+    #     Bloodoath.all.select{|cults|cults.follower == self}
+    # end
 
     def my_cults_slogan
         my_cults.map{|my_oaths| my_oaths.cult.slogan}
     end
 
     def self.most_active
-        @@all.max_by{|follower| follower.my_cults.length}
+        @@all.max_by{|follower| follower.cults.length}
     end
 
     def self.top_ten
-        #I have no idea, please send help
+        #sara code: 
+        @@all.sort_by{|follower| follower.cults.length}.reverse[0...11]
     end
+
+
 end

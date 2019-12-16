@@ -8,14 +8,14 @@ class Bloodoath
         @cult = cult
         @follower = follower
         @initiation_date = initiation_date
+        #Jo code:
+        # @initiation_date = "#{Time.year,now}-#{Time.month,now}-#{Time.day,now}"
         @@all << self
     end
     def self.all
         @@all
     end
     def self.first_oath
-        @@all.first #I know they want by date, but I don't know how to do it
-
+        @@all.min_by {|oaths| oaths.initiation_date}
     end
-
 end

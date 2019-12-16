@@ -50,7 +50,7 @@ Questions you should ask yourself:
 * Am I following _Single Source of Truth_?
 
 **`Cult`**
-
+.to
 * `Cult#name`
   * returns a `String` that is the cult's name
 * `Cult#location`
