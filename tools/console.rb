@@ -12,6 +12,13 @@ follo2 = Follower.new(name:"Ana", age: 22, life_motto: "what doesn't kill you ma
 
 cult1 = Cult.new(name: "scientology", location: "las vegas", founding_year: 1973, slogan: "tom the impossible cruise")
 cult2 = Cult.new(name: "manson crew", location: "california",founding_year: 1967, slogan: "once upon a time in hollywood")
+
+10.times do
+  BloodOath.new(cult: Cult.all.sample, follower: Follower.all.sample)
+end
+
+
+
 # cult1.recruit_follower(follo1)
 
 

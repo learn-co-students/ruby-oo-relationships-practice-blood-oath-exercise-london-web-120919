@@ -15,7 +15,6 @@ class Cult
     @location = location
     @founding_year = founding_year
     @slogan = slogan
-    @followers = []
     @@all << self
   end
 
@@ -23,9 +22,7 @@ class Cult
   # of a follower (instance of follower class) and adds them to the cults list of followers (cult_pop)
   # which is an instance variable  
   def recruit_follower(follower)
-    @followers << follower
-    follower.cults << self
-    BloodOath.all << self
+    Bloodoath.new(self, follower)
   end
 
   def followers
@@ -62,4 +59,4 @@ class Cult
   end
 
 
-end 
+end

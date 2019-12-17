@@ -10,7 +10,6 @@ class Follower
     @name = name
     @age = age
     @life_motto = life_motto
-    @cults = []
     @@all << self
   end
 
@@ -22,9 +21,7 @@ class Follower
   # create a method (#join_cult)that takes an argument of the cult name(string) and adds this
   # follower(self) to the cult's list of followers (instance variable cult_pop inside of the cult class)
   def join_cult(cult)
-    @cults << cult
-    cult.followers << self
-    BloodOath.all << self  
+    Bloodoath.new(cult, self) 
   end
   
   # create an instance variable(all) that returns an array of all the followers
