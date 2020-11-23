@@ -50,7 +50,7 @@ Questions you should ask yourself:
 * Am I following _Single Source of Truth_?
 
 **`Cult`**
-
+.to
 * `Cult#name`
   * returns a `String` that is the cult's name
 * `Cult#location`
@@ -59,6 +59,8 @@ Questions you should ask yourself:
   * returns an `Integer` that is the year the cult was founded
 * `Cult#slogan`
   * returns a `String` that is this cult's slogan
+
+
 * `Cult#recruit_follower`
   * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
 * `Cult#cult_population`
@@ -80,6 +82,8 @@ Questions you should ask yourself:
   * returns an `Integer` that is the age of the follower
 * `Follower#life_motto`
   * returns a `String` that is the follower's life motto
+
+  
 * `Follower#cults`
   * returns an `Array` of this follower's cults
 * `Follower#join_cult`
